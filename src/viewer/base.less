@@ -1,0 +1,101 @@
+.zr-json-viewer-base {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    font-family: monospace;
+
+    &>.field-warp>.meta-data{
+        &>.rt-json-editor-item-toolbar{
+            display: none;
+        }
+        &:hover {
+            &>.rt-json-editor-item-toolbar{
+                display: inline-block;
+            }
+        }
+    }
+
+    .field-desc{
+        padding: 2px;
+        margin-top: 6px;
+        margin-bottom: 3px;
+        border: 1px solid #ecdc18;
+        background-color: #f9f2ce;
+        border-radius: 3px;
+        display: inline;
+        color: #656565;
+        .fa-info-circle{
+            padding: 2px 4px;
+            font-size: 12px;
+        }
+    }
+
+    .field-value{
+        overflow: auto;
+        margin: 0px;
+    }
+
+    &.required{
+        &>.field-warp>.meta-data .field-key{
+            background-color: #fff1f1;
+            &::after{
+                content: '*';
+                color: #900606;
+                padding: 0px 5px;
+            }
+        }
+    }
+
+    &.hidden{
+        display: none !important;
+    }
+
+    .editing-mode{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        
+
+        select, input, textarea{
+            width: 100%;
+            background-color: #FFF !important;
+            outline: none;
+            padding: 2px 5px;
+            font-size: 14px;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            border: 1px solid #d9d9d9;
+            border-radius: 5px;
+            &:hover{
+                border-color:#40a9ff;
+            }
+            &:focus{
+                border-color:#40a9ff;
+                border-right-width:1px !important;
+                outline:0;
+                -webkit-box-shadow:0 0 0 2px rgba(24,144,255,0.2);box-shadow:0 0 0 2px rgba(24,144,255,0.2);
+            }
+        }
+
+        .editing-btns{
+            display: flex;
+            text-align: center;
+            background-color: #f1e9e9;
+            border-radius: 2px;
+            margin: 0px 5px;
+            font-size: 12px;
+            .icon-btn {
+                padding: 3px;
+                margin: 3px;
+                cursor: pointer;
+                &:hover{
+                    color: coral;
+                }
+            }
+        }
+    }
+    
+}
