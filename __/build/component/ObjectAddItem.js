@@ -16,9 +16,10 @@ var Radio = require('./Radio');
 
 var SVGIcon = require('./SVGIcon');
 
-var CodeMirror = require('react-codemirror2').UnControlled; //console.log(codemirror2);
-//import { UnControlled as CodeMirror } from 'react-codemirror2';
+var RC = require('react-codemirror2');
 
+var CodeMirror = RC ? RC.UnControlled : null; //console.log(codemirror2);
+//import { UnControlled as CodeMirror } from 'react-codemirror2';
 
 module.exports = React.createClass({
   displayName: "exports",

@@ -6,7 +6,8 @@ require('codemirror/mode/javascript/javascript.js');
 var React = znui.React || require('react');
 var Radio = require('./Radio');
 var SVGIcon = require('./SVGIcon');
-var CodeMirror = require('react-codemirror2').UnControlled;
+var RC = require('react-codemirror2');
+var CodeMirror = RC ? RC.UnControlled: null;
 //console.log(codemirror2);
 //import { UnControlled as CodeMirror } from 'react-codemirror2';
 
