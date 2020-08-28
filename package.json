@@ -1,6 +1,6 @@
 {
   "name": "znui-react-json",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JSON Editor and Viewer component base on react and znui.",
   "main": "index.js",
   "scripts": {
