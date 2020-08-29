@@ -2,8 +2,6 @@
 
 var React = znui.React || require('react');
 
-var SVGIcon = require('./SVGIcon');
-
 module.exports = React.createClass({
   displayName: "exports",
   render: function render() {
@@ -16,9 +14,11 @@ module.exports = React.createClass({
         onClick: item.onClick,
         className: "icon-btn",
         title: item.title || ''
-      }, item.icon && /*#__PURE__*/React.createElement(SVGIcon, {
-        icon: item.icon
-      }), item.label);
+      }, item.icon && /*#__PURE__*/React.createElement("span", {
+        className: "icon"
+      }, /*#__PURE__*/React.createElement("i", {
+        className: "fa " + item.icon
+      })), item.label);
     }));
   }
 });

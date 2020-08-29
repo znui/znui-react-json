@@ -2,7 +2,6 @@ var React = znui.React || require('react');
 var comp = require('../component/index.js');
 var ItemToolBar = comp.ItemToolBar;
 var ObjectAddItem = comp.ObjectAddItem;
-var SVGIcon = comp.SVGIcon;
 
 var _object = React.createClass({
 	getDefaultProps: function () {
@@ -191,15 +190,15 @@ var _object = React.createClass({
 	render:function(){
 		var _btns = [];
 		if(this.props.editable !== false) {
-			_btns.push({ icon: 'faPlus', onClick: ()=>this.setState({ adding: true, fold: false }) });
+			_btns.push({ icon: 'fa-plus', onClick: ()=>this.setState({ adding: true, fold: false }) });
 		}
 
 		if(this.props._key && this.props.keyEditable){
-			_btns.unshift({ icon: 'faEdit', onClick: ()=>this.setState({ editing: true }) });
+			_btns.unshift({ icon: 'fa-edit', onClick: ()=>this.setState({ editing: true }) });
 		}
 
 		if(this.props.parent && this.props.removal) {
-			_btns.push({ icon: 'faTrash', onClick: this.__onRemove });
+			_btns.push({ icon: 'fa-trash', onClick: this.__onRemove });
 		}
 
 		return (
@@ -212,7 +211,13 @@ var _object = React.createClass({
 				<div className="field-warp object-warp">
 					<div className="meta-data">
 						<span className="fold-icon" onClick={()=>this.setState({ fold: !this.state.fold })}>
-							<SVGIcon icon={(this.state.fold?'faCaretRight':'faCaretDown')} />
+							{
+								this.state.fold
+									?
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-right" className="icon svg-inline--fa fa-caret-right fa-w-6 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path></svg>
+									:
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" className="icon svg-inline--fa fa-caret-down fa-w-10 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>
+							}
 						</span>
 						{this.__renderLabel()}
 						{

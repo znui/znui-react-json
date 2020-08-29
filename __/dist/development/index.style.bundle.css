@@ -28,6 +28,10 @@
   position: relative;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
+.zr-json-component-object-add-item .icon {
+  width: 13px;
+  height: 13px;
+}
 .zr-json-component-object-add-item .form-item {
   display: flex;
   align-items: center;
@@ -136,6 +140,10 @@
   justify-content: flex-start;
   align-items: stretch;
   font-family: monospace;
+}
+.zr-json-editor-base .icon {
+  width: 16px;
+  height: 16px;
 }
 .zr-json-editor-base > .field-warp > .meta-data > .rt-json-editor-item-toolbar {
   display: none;
@@ -264,12 +272,12 @@
 .zr-json-editor-object .object-warp .meta-data {
   width: 100%;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   min-height: 26px;
   line-height: 26px;
 }
 .zr-json-editor-object .object-warp .meta-data .fold-icon {
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   vertical-align: middle;
   width: 12px;
@@ -557,7 +565,7 @@
   word-break: break-all;
 }
 .zr-json-viewer-object .object-warp .meta-data .fold-icon {
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   vertical-align: middle;
   width: 12px;
